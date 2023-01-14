@@ -1,0 +1,123 @@
+/* Impostazione generale relativa al box sizing */
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Immagine di sfondo
+Dopo vari tentativi, pare che la miglior soluzione sia bgsize cover
+anche se con il developer tool si evince la duplicazione in basso */
+body{
+    background-image: url(background.jpg);
+    background-size: cover;
+}
+
+/* Si definisce il contenitore in cui verra' posizionato il tutto */
+#contenitore{
+    background-color: rgba(0,0,0, 0.6);
+/* Dimensionamento in % rispetto al bkground.  */
+    width: 65%;
+    margin: auto;
+    margin-top: 60px;
+    border-radius: 15px;
+}
+
+/* Si settano i parametri per la centratura del logo e del titolo */
+header{
+    text-align: center;
+    color: lime;
+    padding-top: 30px;
+}
+
+/* Si settano i parametri per la barra di navigazione */
+nav{
+    background-color: lime;
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/* Si definiscono le caratteristiche dei pulsanti */
+.pulsante{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black;
+    padding: 2px 5px;
+    margin: 0px 5px;
+}
+
+/* Selettore CSS avanzato che evidenzia il passaggio del mouse */
+.pulsante:hover{
+    background-color: red;
+    color: white;
+}
+
+/* Contenitore flessibile atto a centrare il gruppo dei pulsanti*/
+.flexbox{
+    display: flex;
+    justify-content: center;
+}
+
+/* Si formattano gli item prodotto e li si colloca nel contenitore */
+.item{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+}
+
+/* Rendiamo inline-block solo gli h2 con il nome del prodotto */
+div.item > h3{
+    display: inline-block;
+    padding-left: 20px;
+    font-family: 'Moon Dance', cursive;
+    font-size: 30px;
+}
+
+/* Si inserisce la parola "Monopattino" comune ai tre prodotti */
+div.item > h3::before{
+    content: "Monopattino ";
+}
+
+/* Si inserisce la freccia prima della via */
+div.item > h4::before{
+/* Il codice che segue inserisce una freccia seguita da 2 spazi */
+    content: '\21A6\00A0\00A0';
+}
+
+/* Si definiscono i parametri della barra colorata della carica */
+/* I parametri height e border-radius sono comuni alle tre barre
+   mentre width e bgcolor saranno specifici per ogni barra */
+.barra{
+   width: 60%;
+   height: 20px;    
+   border-radius: 5px;
+   background-color: green;
+}
+
+/* Si definiscono width e bgcolor per la prima barra */
+div.item:first-child > .barra{
+    width: 40%;
+    background-color: orange;
+}
+
+/* Si definiscono width e bgcolor per la terza barra */
+div.item:last-child > .barra{
+    width: 25%;
+    background-color: red;
+}
+
+/* Spaziatura sotto l'ultimo item */
+div.item:last-child{
+    padding-bottom: 80px;
+}
+
+/* Crediti a pie' di pagina */
+footer{
+    color: black;
+    font-family: 'Moon Dance', cursive;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: right;
+}
